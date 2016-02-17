@@ -1,3 +1,5 @@
 git_practice.md
+#this is the readme
+##this is an important header
 
-adding text here it is super awesome
+here is the text inside the header
