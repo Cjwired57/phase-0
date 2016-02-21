@@ -1,5 +1,5 @@
 2.4 Release 4 Reflections
-![alt text](/users/chrislamkin/cjwired57.github.io/imgs/wireframe-blogs.png "Wireframe index")
+![alt text](/users/chrislamkin/cjwired57.github.io/imgs/wireframe-blogs.png)
 ![alt text](/users/chrislamkin/cjwired57.github.io/imgs/wireframe-blog-index.png "Wireframe blog index")
 
 
