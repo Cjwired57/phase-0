@@ -1,6 +1,6 @@
 2.4 Release 4 Reflections
-![alt text](imgs/wireframe-blogs.png)
-![alt text](cjwired57.github.io/imgs/wireframe-blog-index.png "Wireframe blog index")
+![alt text](cjwired57.github.io/imgs/wireframe-blogs.png)
+![alt text](cjwired57.github.io/imgs/wireframe-blog-index.png)
 
 
 -What is a wireframe?
