@@ -1,7 +1,7 @@
 Site Map Reflection
 
 
-![alt text](/users/chrislamkin/phase-0/curriculum/phase-0/week-2/imgs/site-map.png)
+![alt text](imgs/site-map.png)
 
 
 What are the 6 Phases of Web Design?
