@@ -1,3 +1,29 @@
 html {
-  background-color: red;
+
+  background-color: #ffffff;
+  color: #000080;
+
 }
+
+  a:link{
+    color:#800080;
+  }
+
+  a:visited{
+    color:#ff0000;
+  }
+
+  #left{
+    width:50%;
+    float: left;
+  }
+
+  #right{
+    width:50%;
+    float: right;
+  }
+
+  #geico{
+    width:100%;
+    float: center;
+  }
