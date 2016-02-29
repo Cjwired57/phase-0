@@ -1,12 +1,12 @@
-![alt text](imgs/"1- Change the Colors.png")
-![alt text](imgs/"2- Column.png")
-![alt text](imgs/"3- Row.png")
-![alt text](imgs/"4- Make Equidistant.png")
-![alt text](imgs/"5- Squares.png")
-![alt text](imgs/"6- Footer.png")
-![alt text](imgs/"7- Header.png")
-![alt text](imgs/"8- Sidebar.png")
-![alt text](imgs/"9- Get Creative.png")
+![alt text](imgs/1-change-colors.png)
+![alt text](imgs/2-column.png)
+![alt text](imgs/3-row.png)
+![alt text](imgs/4-equidistant.png)
+![alt text](imgs/5-squares.png)
+![alt text](imgs/6-footer.png)
+![alt text](imgs/7-header.png)
+![alt text](imgs/8-sidebar.png)
+![alt text](imgs/9-creative.png)
 
 
 Reflections:
