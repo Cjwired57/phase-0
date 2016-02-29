@@ -1,29 +1,87 @@
 html {
-
-  background-color: red;
-  color: #000080;
-
+  color:#000080;
+  background-color:#ffffff;
+}
+a:link {
+  color: #800080;
+}
+a:visited {
+  color: #ff0000;
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: -15px;
+}
+h1 span{
+  font-size: 200%;
+}
+p span{
+  display: block;
+}
+li span{
+  font-size:75%;
+  display: block;
+  }
+.header p {
+  text-align: center;
+  font-weight:bold;
+}
+.header {
+  border-bottom: 1px solid;
+}
+.left {
+  float:left;
+  width:50%;
+  padding-bottom:5px;
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+.right {
+  float:right;
+  width:50%;
+  padding-bottom: 13px;
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+img.geico {
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+  padding-top:5px;
+  margin-bottom:-15px;
+  margin-top: 10px;
+}
+.Geico-info {
+  text-align: center;
+  border-bottom: 1px solid;
+  font-size:75%;
+}
+.comments {
+  border-bottom: 1px solid;
+  font-size: 75%;
+}
+.disclaimer {
+  font-size: 65%;
 }
 
-  a:link{
-    color:#800080;
-  }
+/*
+Reflections:
 
-  a:visited{
-    color:#ff0000;
-  }
+What is important to know when linking an external file, like a style sheet, to an HTML file?
 
-  #left{
-    width:50%;
-    float: left;
-  }
+It's important to make sure you have the relative path right inside the HREF section, other than that just use the <link rel="stylesheet" type="text/css" href="stylesheet.css"/> formula and you should be good!
 
-  #right{
-    width:50%;
-    float: right;
-  }
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+I used float to separate both of the columns and then mainly just tweaked the margins and paddings.  I initially forgot that images follow slightly different rules and was incredibly frustrated when it wasn't responding to the parameters I thought I was giving it.  When I figured out what was wrong though the rest was pretty straightforward.
 
-  #geico{
-    width:100%;
-    float: center;
-  }
+What CSS did you use to modify the element style?
+I used a combination of color, background-color, font-size and font-weight to get the necessary stylistic changes that I needed.
+
+Did you modify the HTML to include classes or ids? If so, which did you choose and why?
+Yes I used classes for practically everything I was working with.  I used classes because I had already started using them last week and was more comfortable with them, but looking back I probably should have used IDs since I was only specifically targeting the classes anyways.
+
+When you compared your site to the actual code base, which do you think had the cleaner code that followed best practices and why?
+My code was definitely cleaner ;).  The site completely lacked indentation so it's a bit of a mess to read and using tables for the two columns seemed a little too convoluted...although they were able to add some nice spacing between the different links.
+*/
