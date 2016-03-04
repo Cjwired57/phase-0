@@ -1,0 +1,26 @@
+body {
+  margin:0px;
+  background-color: #7ec0d6;
+}
+section {
+  width:40%;
+  padding-left:5%;
+  padding-right:5%;
+  padding-top:5%;
+}
+.column-1 {
+  background-color: #96d5eb;
+  float:left;
+}
+.column-2 {
+  background-color: #7ec0d6;
+  float:right;
+}
+footer {
+  clear:both;
+}
+.bookend {
+  background-color:#47a1bf;
+  width:90%;
+  padding: 5%;
+}
