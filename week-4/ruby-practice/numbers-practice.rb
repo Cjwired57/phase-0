@@ -1,5 +1,4 @@
-var1 = 2
-
-var2 = '5'
-
-puts var1.to_s + var2
+puts 'What is your favorite number?'
+favorite_number = gets.chomp
+better_number = favorite_number.to_i + 1
+puts 'Wait your favorite number is '+favorite_number.to_s+'? '+better_number.to_s+' is a way better number!'
