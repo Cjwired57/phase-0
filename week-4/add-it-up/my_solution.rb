@@ -1,16 +1,3 @@
-def total(array)
-  p array.inject{|sum,x| sum + x}.to_f
-end
-
-def sentence_maker(array)
-  p array.join(' ').capitalize << "."
-end
-
-
-
-
-
-
 # Add it up!
 
 # Complete each step below according to the challenge directions and
