@@ -1,8 +1,12 @@
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [with kunal patel].
 
 
 # Your Solution Below
 
 def valid_triangle?(a, b, c)
-  # Your code goes here!
+  if a + b > c and a + c > b and b + c > a
+    true
+  else
+    false
+  end
 end
