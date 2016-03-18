@@ -56,10 +56,17 @@ class Die
   end
 end
 
+=begin
+Reflection
 
+What were the main differences between this die class and the last one you created in terms of implementation?  Did you need to change much logic to get this to work?
+The main difference was altering the roll method within the die class.  Last time we simply had to use 1 + rand(6) to simulate a dice roll, but because here the argument is an array of strings, we had to incorporate the rand within the act of calling an element of the array, so slightly different.
 
+What does this exercise teach you about making code that is easily changeable or modifiable?
+This code pretty much follows the exact same code as the original die challenge so it was pretty easy to look at both and identify which small parts had to be altered.
 
+What new methods did you learn when working on this challenge?  If any?
+The only method I used here was .length which I was already very familiar with.
 
-
-
-# Reflection
+What concepts about classes were you able to solidify in this challenge?
+This definitely reinforced instance variables, as the first time I typed out the code I forgot the @ sign in front of the labels...it's important to realize that while the instance variable will carry over from method to method, the array or input "labels" will not.
