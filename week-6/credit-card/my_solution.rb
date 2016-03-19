@@ -6,9 +6,18 @@
 
 # Pseudocode
 
-# Input:
-# Output:
+# Input: credit card number as a string
+# Output: boolean true or false
 # Steps:
+# 1. Remove blanks/spaces in string
+# 2. Raise argument error if not 16 digits long
+# 3. Convert string to array (might be able to do this first)
+# 4. Use each_with_index (odd?) to alter the original target odds
+#    odd value and double each
+# 5. Sum all untouched and broken apart doubled digits
+#    a. Break apart any values greater than 9
+#    b. Use inject method to sum all values in array
+# 6. Return result (true/false) of the sum % 10 == 0
 
 
 # Initial Solution
@@ -18,37 +27,44 @@
 
 class CreditCard
 
-  def initialize(card_number)
-    @card_number = card_number
-    raise ArgumentError if card_number.to_s.size != 16
-  end
+    def initialize(credit_card_number)
+      @credit_card_number = credit_card_number
+      @card_array = @credit_card_number.to_s.split(//)
+      @card_array.map! {|n| n.to_i}
 
-  def check_card
-
-    card_string = @card_number.to_s.split('')
-
-    card_string.map! {|number| number.to_i }
-
-
-    double_odd_digit_array = []
-    card_string.each_with_index do |number, index|
-      if index.even?
-        double_odd_digit_array << number * 2
-      else
-        double_odd_digit_array << number
+      if @card_array.length != 16
+        raise ArgumentError.new("Your credit card value must contain 16 digits.")
       end
     end
 
-    check_sum_array = double_odd_digit_array.join.chars
+    def check_card
+      double_array = []
+      @card_array.each_with_index do |number, index|
+        if index.even?
+          double_array << number*2
+        else
+          double_array << number
+        end
+      end
 
-    check_sum_array.map! {|number| number.to_i }
+      third_array = []
+      double_array.each {|x|
+        if x.to_s.length > 1
+          x.to_s.each_char {|character| third_array << character}
+          else
+          third_array << x.to_s
+        end}
 
-    check_sum_array.inject(:+) % 10 == 0
-  end
+      third_array.map! {|n| n.to_i}
 
+      return third_array.inject(:+) % 10 == 0
+
+    end
 end
-card1 = CreditCard.new(1234431241234123)
-p card1.check_card
+
+#p card1 = CreditCard.new("3232 2222 5555 4444")
+#p card1.check_card
+
 
 
 
