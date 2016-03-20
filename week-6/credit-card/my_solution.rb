@@ -62,19 +62,26 @@ class CreditCard
     end
 end
 
-#p card1 = CreditCard.new("3232 2222 5555 4444")
-#p card1.check_card
-
-
-
-
 # Refactored Solution
 
+class CreditCard
+  def initialize(credit_card_number)
+    @credit_card_number = credit_card_number
+    raise ArgumentError.new("Your credit card value must contain 16 digits.") if credit_card_number.to_s.size != 16
+  end
+  def check_card
 
 
 
 
+=begin
+Reflection
 
+What was the most difficult part of this challenge for you and your pair?
+We had a very clear idea of what we needed to do after pseudocoding, but weren't familiar with how to split the double digit elements after the doubling step.  But then after researching the .each_char method we were able to target each digit independently and add everything to another array.
 
+What new methods did you find to help you when you refactored?
 
-# Reflection
+What concepts or learnings were you able to solidify in this challenge?
+It was nice repurposing the .each_with_index method that I had used during the nested data structure challenge.  Because every other digit needed to be doubled, it was easy to target these elements combining that element with .even?.
+=end
