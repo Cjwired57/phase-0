@@ -24,7 +24,7 @@
 
 # Don't forget to check on initialization for a card length
 # of exactly 16 digits
-
+=begin
 class CreditCard
 
     def initialize(credit_card_number)
@@ -61,19 +61,36 @@ class CreditCard
 
     end
 end
-
+=end
 # Refactored Solution
 
 class CreditCard
   def initialize(credit_card_number)
     @credit_card_number = credit_card_number
+    @card_array = @credit_card_number.to_s.split(//)
+    @card_array.map! {|n| n.to_i}
     raise ArgumentError.new("Your credit card value must contain 16 digits.") if credit_card_number.to_s.size != 16
   end
   def check_card
-
-
-
-
+    double_array = []
+    @card_array.each_with_index do |number, index|
+      if index.even?
+        double_array << number*2
+      else
+        double_array << number
+      end
+    end
+      third_array = []
+      double_array.each {|x|
+        if x.to_s.length > 1
+          x.to_s.each_char {|character| third_array << character}
+        else
+          third_array << x.to_s
+        end}
+      third_array.map! {|n| n.to_i}
+      return third_array.inject(:+) % 10 == 0
+    end
+end
 =begin
 Reflection
 
@@ -81,6 +98,7 @@ What was the most difficult part of this challenge for you and your pair?
 We had a very clear idea of what we needed to do after pseudocoding, but weren't familiar with how to split the double digit elements after the doubling step.  But then after researching the .each_char method we were able to target each digit independently and add everything to another array.
 
 What new methods did you find to help you when you refactored?
+Honestly, I wasn't able to find a method for refactoring...I know that I want to take the double_array and third_array steps and merge them into one, but I'm really not sure how I would go about doing that so I'll bring this in to office hours.  In my refactored solution I focused on making everything more readable, and on cleaning up some unnecessary code in the initialize method.
 
 What concepts or learnings were you able to solidify in this challenge?
 It was nice repurposing the .each_with_index method that I had used during the nested data structure challenge.  Because every other digit needed to be doubled, it was easy to target these elements combining that element with .even?.
