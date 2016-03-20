@@ -37,7 +37,7 @@ p nested_data[:array][1][:hash]
 # ============================================================
 =end
 # RELEASE 3: ITERATE OVER NESTED STRUCTURES
-=begin
+
 number_array = [5, [10, 15], [20,25,30], 35]
 number_array.each do |element|
   if element.kind_of?(Array)
@@ -57,9 +57,9 @@ number_array.each_with_index do |element, index|
   end
 end
 p number_array
-=end
-# Bonus:
 
+# Bonus:
+#Ran out of time here :(
 startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
 easy_startup_names = ["bit", "find", "fast", "optimize", "scope"]
 
@@ -72,3 +72,16 @@ startup_names.each_with_index do |element, index|
   end
 end
 p startup_names
+
+=begin
+Reflection
+
+What are some general rules you can apply to nested arrays?
+I think that when accessing values within nested arrays/hashes it is always helpful to see how many brackets are included at the end of the array as it gives you a good indication of how many sets of brackets (array[0][1][3] etc.) you will need to include when trying to call a specific element.
+
+What are some wasy you can iterate over nested arrays?
+We found that a combination of using the .kind_of? method and .each_with_index were incredibly helpful.  By identifying whether an element of an array was itself an array we could then iterate over the elements within that array pretty easily, but then using .each_with_index was also helpful in iterating over arrays in general.
+
+Did you find any good new methods to implement or did you re-use one you were already familiar with? What was it and why did you decide it was a good option?
+Both .kind_of? and .each_with_index were new methods for me, .kind_of? I grabbed from the instructions and .each_with_method I used instead of .each after I was running into problems making my code destructive.
+=end
