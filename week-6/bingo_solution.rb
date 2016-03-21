@@ -52,69 +52,6 @@ class BingoBoard
 
   def check
     if @letter_generator == "B"
-      @bingo_board[0].map! { |element|
-        if(element == @number_generator)
-          "X"
-        else
-          element
-        end
-      }
-    end
-    if @letter_generator == "I"
-      @bingo_board[1].map! { |element|
-        if(element == @number_generator)
-          "X"
-        else
-          element
-        end
-      }
-    end
-    if @letter_generator == "N"
-      @bingo_board[2].map! { |element|
-        if(element == @number_generator)
-          "X"
-        else
-          element
-        end
-      }
-    end
-    if @letter_generator == "G"
-      @bingo_board[3].map! { |element|
-        if(element == @number_generator)
-          "X"
-        else
-          element
-        end
-      }
-    end
-    if @letter_generator == "O"
-      @bingo_board[4].map! { |element|
-        if(element == @number_generator)
-          "X"
-        else
-          element
-        end
-      }
-    end
-    return @bingo_board.map { |block| puts block.inspect }
-  end
-end
-=end
-# Refactored Solution
-class BingoBoard
-
-  def initialize(board)
-    @bingo_board = board
-  end
-
-  def call
-    letter_array = ["B", "I", "N", "G", "O"]
-    @letter_generator = letter_array.sample
-    @number_generator = 1 + rand(100)
-    return @letter_generator + @number_generator.to_s
-  end
-  def check
-    if @letter_generator == "B"
       @bingo_board.collect! {|row| row.collect!.each_with_index { |number, index|
         if number == @number_generator && index == 0
           number = "X"
@@ -160,8 +97,32 @@ class BingoBoard
     end
     return @bingo_board.map { |block| puts block.inspect }
   end
-end
+=end
+# Refactored Solution
+class BingoBoard
 
+  def initialize(board)
+    @bingo_board = board
+  end
+
+  def call
+    @letter_array = ["B", "I", "N", "G", "O"]
+    @rand_index = rand(@letter_array.length)
+    @letter_generator = @letter_array[rand(@letter_array.length)]
+    @number_generator = 1 + rand(100)
+    return @letter_generator + @number_generator.to_s
+  end
+
+  def check
+    @bingo_board.collect! {|row| row.collect!.each_with_index { |number, index|
+      if number == @number_generator && index == @letter_array.index(@letter_generator)
+        number = "X"
+      else
+        number
+      end }}
+    return @bingo_board.map! { |block| puts block.inspect }
+  end
+end
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
 board = [[47, 44, 71, 8, 88],
@@ -198,3 +159,5 @@ Anything that I needed to call that had been assigned value outside of the metho
 
 What do you feel is most improved in your refactored solution?
 My refactoring actually tackled the main problem in my initial solution which was that it iterated over rows and not columns.  Because of this, my initial solution would substitute a number with "X" regardless of the randomly generated letter.  I fixed this problem in my refactored solution.  I know that my current refactored solution is extremely clunky, but after spending so much time on this exercise, I wasn't able to find any methods that could help me shorten it...I'll definitely be bringing this into office hours to see how I can do this more cleanly/less cluttered.
+
+=end
