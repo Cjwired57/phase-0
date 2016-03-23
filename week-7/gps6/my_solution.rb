@@ -16,18 +16,29 @@ class VirusPredictor
     @population_density = population_density
   end
 
+<<<<<<< HEAD
   private
 
   def virus_effects
 
+=======
+  def virus_effects
+>>>>>>> origin
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
+<<<<<<< HEAD
 
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
 
+=======
+  private
+
+  def predicted_deaths(population_density, population, state)
+    # predicted deaths is solely based on population density
+>>>>>>> origin
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
     elsif @population_density >= 150
@@ -72,6 +83,7 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+<<<<<<< HEAD
 STATE_DATA.each do |state, value|
  all_states =  VirusPredictor.new(state, value[:population_density], value[:population])
 p all_states.virus_effects
@@ -80,6 +92,9 @@ end
 
 
 =begin
+=======
+
+>>>>>>> origin
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
 
@@ -91,6 +106,7 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+<<<<<<< HEAD
 =end
 
 #=======================================================================
@@ -113,3 +129,9 @@ Unfortunately, we ran out of time trying to figure out why the method virus_effe
 What concept did you most solidify in this challenge?
 Iterating over hashes...during the course of week 6 I definitely grew comfortable working with arrays and even nested arrays, but for some reason the syntax of hashes throws me off, so this exercise definitely helped to solidify my understanding.
 =end
+=======
+
+
+#=======================================================================
+# Reflection Section
+>>>>>>> origin
