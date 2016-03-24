@@ -1,44 +1,31 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Ben Flores ].
+# We spent [3] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# require_relative takes information from a different file by loading that info, whereas require you use when you need to make use of rubys built in libraries
+
 require_relative 'state_data'
 
 class VirusPredictor
 
-  def initialize(state_of_origin, population_density, population)
-    @state = state_of_origin
-    @population = population
-    @population_density = population_density
+  def initialize(state)
+    @state = state
+    @population = STATE_DATA[state][:population]
+    @population_density = STATE_DATA[state][:population_density]
   end
-
-<<<<<<< HEAD
-  private
 
   def virus_effects
 
-=======
-  def virus_effects
->>>>>>> origin
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
-<<<<<<< HEAD
-
-  def predicted_deaths(population_density, population, state)
-    # predicted deaths is solely based on population density
-
-=======
   private
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
->>>>>>> origin
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
     elsif @population_density >= 150
@@ -55,7 +42,7 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -83,18 +70,15 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-<<<<<<< HEAD
+
 STATE_DATA.each do |state, value|
- all_states =  VirusPredictor.new(state, value[:population_density], value[:population])
-p all_states.virus_effects
+  all_states =  VirusPredictor.new(state)
+  all_states.virus_effects
 end
 
 
 
 =begin
-=======
-
->>>>>>> origin
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
 
@@ -106,7 +90,6 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
-<<<<<<< HEAD
 =end
 
 #=======================================================================
@@ -124,14 +107,9 @@ What are some ways to iterate through a hash?
 We used .each to iterate over the hash...it's similar to using .each_with_index for arrays, except in this case the keys are the index.
 
 When refactoring virus_effects, what stood out to you about the variables, if anything?
-Unfortunately, we ran out of time trying to figure out why the method virus_effects needed refactoring to begin with.
+The variables were the methods below (predicted_deaths and speed_of_spread), it seemed repetitive to have to pass arguments through these two methods again, especially given the fact that they are private.  In refactoring we decided to change the input to 1 argument (state) and defined the rest of the instance variables below...seeing as the population density and population arguments were both tied to their state, we should only need to pass one argument instaed of all three.
 
 What concept did you most solidify in this challenge?
 Iterating over hashes...during the course of week 6 I definitely grew comfortable working with arrays and even nested arrays, but for some reason the syntax of hashes throws me off, so this exercise definitely helped to solidify my understanding.
 =end
-=======
 
-
-#=======================================================================
-# Reflection Section
->>>>>>> origin
