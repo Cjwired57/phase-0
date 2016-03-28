@@ -16,9 +16,18 @@ move: function(direction) {
       }
       else if(medusa.power <= perseus.power){
     console.log("You see your reflection in Perseus' shield and turn to stone!");
+      perseus.alive = false;
       }
     }
 }
+}
+function dead(perseus) {
+  if(perseus.alive = true){
+    console.log("Perseus is still at large!");
+  }
+  else if(perseus.alive = false){
+    console.log("Perseus has been turned to stone already!");
+  }
 }
 
 var perseus = {
@@ -27,6 +36,6 @@ var perseus = {
 }
 
 medusa.move("left")
-
+console.log(dead(perseus))
 
 
