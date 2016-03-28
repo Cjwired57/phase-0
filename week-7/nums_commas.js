@@ -33,7 +33,7 @@
 //       arrayReverse.splice(i, 0, ",");
 
 //     }
-//     return arrayReverse;
+//     return arrayReverse.reverse().join("");
 //   }
 //   // var counter = 3;
 //   // for(var i=0; i < counter; i++)
@@ -60,5 +60,19 @@ function commaSeparator(number) {
 console.log(commaSeparator(1234567890))
 
 
+/*
+Reflection
 
-// Reflection
+What was it like to approach the problem from the perspective of javaScript?  Did you approach the problem differently?
+I approached the problem in a similar way at fist, trying to set up conditional statements to deal with the number if the total number of digits were divisible by three or not.  However I realized that it would be much easier to go with a while loop in the end.
+
+What did you learn about iterating over arrays in JavaScript?
+Aside from learning the new methods, such as splice in javascript, I thought that overall it was a bit eaier...although maybe that has more to do with having done it so many times in Ruby...I think the logic carries over well.
+
+What was different about solving this problem in JavaScript?
+When I solved this problem in Ruby my solution was much more complicated...when I tried to apply a similar strategy here I used the for loop, but could not figure out how to splice a comma before increasing the value of i...When I switched over to a while loop I was able to solve this problem pretty quickly.
+
+What built-in methods did you find to incorporate in your refactored solution?
+I used .reverse(), .split(), .splice() and .join to handle reversing the string, splitting it into an array, adding commas in, and transforming the array back into a string.
+
+*/

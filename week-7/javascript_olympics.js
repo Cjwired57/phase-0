@@ -5,11 +5,6 @@
 // This challenge took me [1] hours.
 
 
-// Warm Up
-
-
-
-
 // Bulk Up
 
  var athlete1 = {
@@ -69,4 +64,15 @@ var michaelPhelps = new Athlete("Michael Phelps", 29, "swimming", "It's medicina
 console.log(michaelPhelps.constructor === Athlete)
 console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps.quote)
 
-// Reflection
+/*
+Reflection
+
+What Javascript knowledge did you solidify in this challenge?
+I was able to practice iterating over arrays in JavaScript a bit more, which was very helpful in making a smoother transition from Ruby.
+
+What are constructor functions?
+Sometimes defining an object can be very limiting, so there is a need to be able to create an object type that we can use several times without having to alter each individual object to meet each instances needs.  As a result, you use an object constructor, which is similar to building classes in Ruby.
+
+How are constructors different from Ruby classes (in your research?)
+From what I can see so far, they are pretty similar, although it doesn't look as though constructor functions need a separate initialize section, as that's taken care of in the function itself.
+*/
