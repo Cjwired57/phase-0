@@ -6,9 +6,9 @@ var medusa = {
 
 move: function(direction) {
   if(direction === "left" || direction === "right" || medusa.moveCounter !== medusa.heroEncounter){
-    medusa.moveCounter +=1;
+    console.log("Still no sight of Perseus...");
   }
-  console.log("Still no sight of Perseus...")
+  medusa.moveCounter +=1;
     if(medusa.moveCounter === medusa.heroEncounter){
     console.log("An angry Perseus has appeared!")
       if(medusa.power > perseus.power){
