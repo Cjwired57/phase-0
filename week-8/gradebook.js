@@ -23,21 +23,67 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
+var gradebook = {};
 
+gradebook["Joseph"] = {};
+gradebook["Susan"] = {};
+gradebook["William"] = {};
+gradebook["Elizabeth"] = {};
 
+gradebook.Joseph.testScores = scores[0];
+gradebook.Susan.testScores = scores[1];
+gradebook.William.testScores = scores[2];
+gradebook.Elizabeth.testScores = scores[3];
 
+gradebook["addScore"] =
+function(name, score){
+  gradebook[name]["testScores"].push(score);
+}
 
+gradebook.getAverage = function(name){
+  return average(gradebook[name]["testScores"]);
+};
 
+function average(arrayIntegers){
+  var sum = 0;
+ for (var i = 0; i < arrayIntegers.length; i++){
+   sum += arrayIntegers[i];
+ }
+  var average = sum / arrayIntegers.length;
+  return average;
+}
 
+console.log(gradebook.Susan.testScores)
 
 // __________________________________________
 // Refactored Solution
 
+var gradebook = {};
+
+for (var i = 0; i < students.length; i++){
+  gradebook[students[i]] = {testScores: scores[i]};
+}
+
+gradebook["addScore"] =
+function(name, score){
+  gradebook[name]["testScores"].push(score);
+}
+
+gradebook.getAverage = function(name){
+  return average(gradebook[name]["testScores"]);
+};
+
+function average(arrayIntegers){
+  var sum = 0;
+ for (var i = 0; i < arrayIntegers.length; i++){
+   sum += arrayIntegers[i];
+ }
+  return (sum / arrayIntegers.length);
+
+}
 
 
-
-
-
+console.log(gradebook.Susan.testScores)
 
 
 // __________________________________________
