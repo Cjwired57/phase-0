@@ -1,7 +1,7 @@
 /*
 Gradebook from Names and Scores
-I worked on this challenge [by myself, with:]
-This challenge took me [#] hours.
+I worked on this challenge [with: Kunal Patel]
+This challenge took me [.5] hours.
 You will work with the following two variables.  The first, students, holds the names of four students.
 The second, scores, holds groups of test scores.  The relative positions of elements within the two
 variables match (i.e., 'Joseph' is the first element in students; his scores are the first value in scores.).
@@ -14,11 +14,6 @@ var scores = [ [80, 70, 70, 100],
                [85, 80, 90, 90],
                [75, 70, 80, 75],
                [100, 90, 95, 85] ]
-
-
-
-
-
 
 // __________________________________________
 // Write your code below.
@@ -79,22 +74,27 @@ function average(arrayIntegers){
    sum += arrayIntegers[i];
  }
   return (sum / arrayIntegers.length);
-
 }
 
+/*
+__________________________________________
+Reflect
 
-console.log(gradebook.Susan.testScores)
+What did you learn about adding functions to objects?
 
+Adding functions to objects actually ended up being pretty intuitive.  It's pretty cool that you can create a function and then reference it inside the property definition of the object you are creating.  Even now, looking over my refactored code it looks like we could probably get rid of the average function altogether and just add that inside the property "getAverage".
 
-// __________________________________________
-// Reflect
-// What did you learn about adding functions to objects?
+How did you iterate over nested arrays in JavaScript?
 
-// How did you iterate over nested arrays in JavaScript?
+We just used for loops...and calculating the average was pretty simple as we had already done that in our group challenge last week.
 
-// Were there any new methods you were able to incorporate?  If so, what were they and how did they work?
+Were there any new methods you were able to incorporate?  If so, what were they and how did they work?
 
-// __________________________________________
+No, we just used push which I had used before but needed to check on how to implement it.
+
+__________________________________________
+*/
+
 // Test Code:  Do not alter code below this line.
 
 
