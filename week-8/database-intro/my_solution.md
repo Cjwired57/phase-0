@@ -1,0 +1,1 @@
+![alt tag](outfits_schema.png)
