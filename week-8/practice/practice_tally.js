@@ -177,10 +177,30 @@ officers["vicePresident"] = winner;
 // __________________________________________
 // Refactored Solution
 
+for (var student in votes) {
+  for (var position in votes[student]) {
+  var ballotName = votes[student][position];
+      if (voteCount[position].hasOwnProperty(ballotName)){
+      voteCount[position][ballotName] ++;
+      }
+      else {
+      voteCount[position][ballotName] = 1;
+      }
+  }
+}
 
+for (var position in voteCount){
+  var tallies = 0;
+  var winner = "";
 
-
-
+for (var name in voteCount[position]) {
+  if (tallies < voteCount[position][name]){
+    tallies = voteCount[position][name];
+    winner = name;
+  }
+}
+officers[position] = winner;
+}
 
 // __________________________________________
 // Reflection
