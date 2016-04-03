@@ -1,7 +1,7 @@
 // Tally Votes in JavaScript Pairing Challenge.
 
-// I worked on this challenge with:
-// This challenge took me [#] hours.
+// I worked on this challenge with: Caitlin Hoffman
+// This challenge took me [2] hours.
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -68,19 +68,83 @@ var officers = {
 // __________________________________________
 // Initial Solution
 
-for (var student in votes) {
-  for (var position in votes[student]) {
-    var ballotName = votes[student][position];
-  if (voteCount[position].hasOwnProperty(ballotName)){
-    voteCount[position][ballotName] ++;
+for (var voter in votes) {
+  if(voteCount["president"].hasOwnProperty(votes[voter]["president"])) {
+    voteCount["president"][votes[voter]["president"]]++;
   }
   else {
-    votecount[position][ballotName] = 1;
+    voteCount["president"][votes[voter]["president"]] = 1;
   }
-    }
 }
+for (var voter in votes) {
+  if(voteCount["vicePresident"].hasOwnProperty(votes[voter]["vicePresident"])) {
+    voteCount["vicePresident"][votes[voter]["vicePresident"]]++;
+  }
+  else {
+    voteCount["vicePresident"][votes[voter]["vicePresident"]] = 1;
+  }
+}
+for (var voter in votes) {
+  if(voteCount["secretary"].hasOwnProperty(votes[voter]["secretary"])) {
+    voteCount["secretary"][votes[voter]["secretary"]]++;
+  }
+  else {
+    voteCount["secretary"][votes[voter]["secretary"]] = 1;
+  }
+}
+for (var voter in votes) {
+  if(voteCount["treasurer"].hasOwnProperty(votes[voter]["treasurer"])) {
+    voteCount["treasurer"][votes[voter]["treasurer"]]++;
+  }
+  else {
+    voteCount["treasurer"][votes[voter]["treasurer"]] = 1;
+  }
+}
+console.log(voteCount)
 
+var tallies = voteCount["president"];
+var record = 0;
 
+for (var name in tallies){
+  if(tallies[name] > record){
+    record = tallies[name];
+    winner = name;
+  }
+}
+officers["president"] = winner;
+
+var tallies = voteCount["vicePresident"];
+var record = 0;
+
+for (var name in tallies){
+  if(tallies[name] > record){
+    record = tallies[name];
+    winner = name;
+  }
+}
+officers["vicePresident"] = winner;
+
+var tallies = voteCount["secretary"];
+var record = 0;
+
+for (var name in tallies){
+  if(tallies[name] > record){
+    record = tallies[name];
+    winner = name;
+  }
+}
+officers["secretary"] = winner;
+
+var tallies = voteCount["treasurer"];
+var record = 0;
+
+for (var name in tallies){
+  if(tallies[name] > record){
+    record = tallies[name];
+    winner = name;
+  }
+}
+officers["treasurer"] = winner;
 // __________________________________________
 // Refactored Solution
 
