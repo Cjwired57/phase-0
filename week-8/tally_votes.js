@@ -63,7 +63,16 @@ var officers = {
 }
 
 // Pseudocode
-
+//Step 1) Use a for...in... loop to iterate through each of the student voters in the vote object
+//Step 2) Use a conditional loop and .hasOwnProperty method to check whether the voteCount object has the same property as the student voter property...if it does then have the loop add one to the value of the property.
+//Step 3) In the else statement, set the value of the property in voteCount to 1...this way when the first vote for a student is tallied, a property will be created with value 1 inside of the voteCount object... any additional votes will then just add 1 to the property's value
+//Step 4) Repeat the previous steps for each position...we can worry about making this more DRY in the refactoring.
+//Step 5) To declare a winner, start by setting two variables.  The first should be called tallies and should equal the voteCount["president"] property.  The second should be a record placeholder and can be set to 0.
+//Step 6) Now use a for...in... loop to iterate through all of the names in the voteCount["president"] property.
+//Step 7) Create an if statement that compares each name to the variable record...if the name has a value greater than the record, then that name's value will become the new record.
+//Step 8) Then we need to create a variable "winner" and set it equal to that name.
+//Step 9) Finally, we need to change the property inside of the officers object from undefined to whatever name has been assigned to the variable "winner"
+//Step 10) Repeat these steps for each position after president, we can refactor afterwards.
 
 // __________________________________________
 // Initial Solution
@@ -148,21 +157,46 @@ officers["treasurer"] = winner;
 // __________________________________________
 // Refactored Solution
 
+for (var student in votes) {
+  for (var position in votes[student]) {
+  var ballotName = votes[student][position];
+      if (voteCount[position].hasOwnProperty(ballotName)){
+      voteCount[position][ballotName] ++;
+      }
+      else {
+      voteCount[position][ballotName] = 1;
+      }
+  }
+}
 
+for (var position in voteCount){
+  var tallies = 0;
+  var winner = "";
 
-
-
+for (var name in voteCount[position]) {
+  if (tallies < voteCount[position][name]){
+    tallies = voteCount[position][name];
+    winner = name;
+  }
+}
+officers[position] = winner;
+}
 
 // __________________________________________
-// Reflection
+/* Reflection
 
+What did you learn about iterating over nested objects in JavaScript?
+I learned how to use the .hasOwnProperty method in a pretty interesting way...I didn't realize how powerful this tool was at first, but it proved to be crucial in iterating over the nested objects since it allows you to use conditional statements to modify an object if the property does not match, and then continue to change the value once the properties do match.
 
+Were you able to find useful methods to help you with this?
+The only new method we used was the .hasOwnProperty method that I described above.
 
-
-
+What concepts were solidified in the process of working through this challenge?
+I hadn't had much practice with for...in... loops and I definitely gained a better understanding of them by the end of this challenge.  It helped to think of them as the Ruby counterpart, using "do" statements with a value in the pipes to iterate over each element.
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
+*/
 
 
 function assert(test, message, test_number) {
